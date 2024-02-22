@@ -23,7 +23,7 @@ const SingleCategory = () => {
 
   async function getProduct() {
     const { data } = await axios.get(
-      "http://localhost:8080/api/v1/product/all-products"
+      "https://meroshop-3vns.onrender.com/api/v1/product/all-products"
     );
     if (data.success) {
       setProducts(data.result);
@@ -66,7 +66,7 @@ const SingleCategory = () => {
                       <img
                         className="h-full hover:scale-110 duration-500  w-full rounded-xl
                                             object-cover"
-                        src={`http://localhost:8080/api/v1/product/product-image/${item.slug}`}
+                        src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${item.slug}`}
                         alt="photo"
                       />
                     </div>

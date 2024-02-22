@@ -31,11 +31,14 @@ function Login() {
       toast.error("enter email or password to login !!");
     } else {
       //paste the code
-      const data = await fetch("http://localhost:8080/api/v1/auth/login", {
-        method: "post",
-        body: JSON.stringify({ email, password }),
-        headers: { "Content-Type": "application/json" },
-      });
+      const data = await fetch(
+        "https://meroshop-3vns.onrender.com/api/v1/auth/login",
+        {
+          method: "post",
+          body: JSON.stringify({ email, password }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const result = await data.json();
       if (result.success) {
         //login successful

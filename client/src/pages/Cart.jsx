@@ -20,7 +20,11 @@ export default function Cart() {
     if (info == "reset") {
       toast.success("cart reset successfully.");
     } else {
-      toast.success("Order placed successfully.");
+      if (auth) {
+        toast.success("Order placed successfully.");
+      } else {
+        toast.error("Please Login to Checkout.");
+      }
     }
   }
 
@@ -50,13 +54,17 @@ export default function Cart() {
           <button
             onClick={() => {
               if (data.length) {
-                if (order) {
-                  setOrder([...order, data]);
+                if (auth) {
+                  if (order) {
+                    setOrder([...order, data]);
+                  } else {
+                    setOrder(data);
+                  }
+                  sessionStorage.setItem("order", JSON.stringify(order));
+                  clearCart("checkout");
                 } else {
-                  setOrder(data);
+                  toast.error("Please Login to Checkout.");
                 }
-                sessionStorage.setItem("order", JSON.stringify(order));
-                clearCart("checkout");
               }
             }}
             className="px-3 py-1 lg:py-3 lg:px-4 lg:text-[17px] bg-green-500 rounded-xl
@@ -85,7 +93,7 @@ export default function Cart() {
                   <div className="h-full">
                     <img
                       className="h-full object-cover w-full"
-                      src={`http://localhost:8080/api/v1/product/product-image/${i.item.slug}`}
+                      src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${i.item.slug}`}
                       alt="product photo"
                     />
                   </div>

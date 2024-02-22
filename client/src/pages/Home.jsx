@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
   async function getProduct() {
     const { data } = await axios.get(
-      "http://localhost:8080/api/v1/product/all-products"
+      "https://meroshop-3vns.onrender.com/api/v1/product/all-products"
     );
     if (data.success) {
       setProduct(data.result);
@@ -33,7 +33,7 @@ export default function Home() {
   async function searchProduct() {
     if (searchText) {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/product/search/${searchText}`
+        `https://meroshop-3vns.onrender.com/api/v1/product/search/${searchText}`
       );
       if (data.success) {
         setSearchedItems(data.data);
@@ -111,7 +111,7 @@ export default function Home() {
                   <img
                     className="h-full hover:scale-110 duration-500  w-full rounded-xl
                                   object-cover"
-                    src={`http://localhost:8080/api/v1/product/product-image/${item.slug}`}
+                    src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${item.slug}`}
                     alt="photo"
                   />
                 </div>
@@ -166,7 +166,7 @@ export default function Home() {
                 <img
                   className="h-full hover:scale-110 duration-500  w-full rounded-xl
                                     object-cover"
-                  src={`http://localhost:8080/api/v1/product/product-image/${item.slug}`}
+                  src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${item.slug}`}
                   alt="photo"
                 />
               </div>

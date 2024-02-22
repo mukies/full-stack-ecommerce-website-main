@@ -38,7 +38,7 @@ export default function Orders() {
               <div className="w-[40px] h-full flex-2 md:flex-1">
                 <img
                   className=" h-full object-cover object-center"
-                  src={`http://localhost:8080/api/v1/product/product-image/${item.item.slug}`}
+                  src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${item.item.slug}`}
                   alt="product-image"
                 />
               </div>

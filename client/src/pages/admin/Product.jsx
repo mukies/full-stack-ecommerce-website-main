@@ -15,7 +15,7 @@ export default function Product() {
   }, []);
   async function getProduct() {
     const { data } = await axios.get(
-      "http://localhost:8080/api/v1/product/all-products"
+      "https://meroshop-3vns.onrender.com/api/v1/product/all-products"
     );
     if (data.success) {
       setProduct(data.result);

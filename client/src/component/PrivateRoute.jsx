@@ -12,9 +12,12 @@ export default function PrivateRoute() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   async function checkAdmin() {
-    const data = await fetch("http://localhost:8080/api/v1/auth/admin-check", {
-      headers: { Authorization: auth.token },
-    });
+    const data = await fetch(
+      "https://meroshop-3vns.onrender.com/api/v1/auth/admin-check",
+      {
+        headers: { Authorization: auth.token },
+      }
+    );
     const result = await data.json();
     if (result.success) {
       setOk(false);

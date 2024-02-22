@@ -11,7 +11,9 @@ const Category = () => {
   }, []);
 
   async function getCategory() {
-    const data = await fetch("http://localhost:8080/api/v1/category/all");
+    const data = await fetch(
+      "https://meroshop-3vns.onrender.com/api/v1/category/all"
+    );
     const result = await data.json();
 
     if (result.success) {

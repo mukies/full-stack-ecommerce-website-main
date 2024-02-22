@@ -10,7 +10,7 @@ export default function ProductList({ item, getProduct }) {
   const auth = JSON.parse(localStorage.getItem("_L"));
   async function deleteItem(id) {
     const data = await fetch(
-      `http://localhost:8080/api/v1/product/delete/${id}`,
+      `https://meroshop-3vns.onrender.com/api/v1/product/delete/${id}`,
       {
         method: "delete",
         headers: { authorization: auth.token },
@@ -41,7 +41,7 @@ export default function ProductList({ item, getProduct }) {
           className="object-cover  object-center rounded-lg 
                                w-auto
                                 h-full block"
-          src={`http://localhost:8080/api/v1/product/product-image/${item.slug}`}
+          src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${item.slug}`}
         />
       </Link>
       <div className="my-4">

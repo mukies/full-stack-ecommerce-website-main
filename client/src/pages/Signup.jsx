@@ -33,11 +33,14 @@ function Signup() {
     } else {
       if (password == rePass) {
         //all condition is true
-        const data = await fetch("http://localhost:8080/api/v1/auth/register", {
-          method: "post",
-          body: JSON.stringify({ name, email, password, phone }),
-          headers: { "Content-Type": "application/json" },
-        });
+        const data = await fetch(
+          "https://meroshop-3vns.onrender.com/api/v1/auth/register",
+          {
+            method: "post",
+            body: JSON.stringify({ name, email, password, phone }),
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         const result = await data.json();
         if (result.success) {
           ///  everything is ok

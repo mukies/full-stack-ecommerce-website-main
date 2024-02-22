@@ -19,7 +19,7 @@ const SingleProduct = () => {
 
   async function getProduct() {
     const { data } = await axios.get(
-      `http://localhost:8080/api/v1/product/get/${id}`
+      `https://meroshop-3vns.onrender.com/api/v1/product/get/${id}`
     );
     if (data.success) {
       console.log(data.result);
@@ -45,7 +45,7 @@ const SingleProduct = () => {
           <div className=" max-w-[400px]">
             <img
               className=" object-cover object-center"
-              src={`http://localhost:8080/api/v1/product/product-image/${id}`}
+              src={`https://meroshop-3vns.onrender.com/api/v1/product/product-image/${id}`}
               alt="product-image"
             />
           </div>
